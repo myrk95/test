@@ -33,6 +33,9 @@ class TestController
             "query" => $params,
           
         ]);  
+        //aquí vendría la parte de guardar el resultado de la pregunta que le hemos hecho a la api con un setter a una entidad que guarda en una base de datos en este 
+        //caso tenía preparada una base de datos online, aquí está el string de conexión 
+        // DATABASE_URL="mysql://marclb@localhost:passwd.@db4free.net:3306/marctestenergia?serverVersion=8.2"
 
         // Decodifica la respuesta JSON
         $data = json_decode($response->getBody());
@@ -40,6 +43,7 @@ class TestController
         return new Response(
             '<html><body>Test</body></html>'
         );
+        
         
     }
 }
