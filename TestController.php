@@ -32,17 +32,14 @@ class TestController
         $response = $client->request("GET", "questions", [
             "query" => $params,
           
-        ]);  dd($response );
+        ]);  
 
         // Decodifica la respuesta JSON
         $data = json_decode($response->getBody());
-        dd($data );
-        // Imprime los resultados
-        foreach ($data->items as $question) {
-            echo "Título: {$question->title}\n";
-            echo "Cuerpo: {$question->body}\n\n";
-        }
-
-  
+        
+        return new Response(
+            '<html><body>Test</body></html>'
+        );
+        
     }
 }
